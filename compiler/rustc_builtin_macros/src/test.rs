@@ -207,7 +207,7 @@ pub(crate) fn expand_test_or_bench(
     };
 
     let test_fn = if is_bench {
-        // A simple ident for a lambda, using the user's function name within it to avoid collisons.
+        // A simple ident for a lambda, using the user's function name within it to avoid collisions.
         let param_name = format!("__bench_{}", fn_.ident.name);
         let bencher_param = Ident::new(Symbol::intern(&param_name), attr_sp);
         cx.expr_call(
